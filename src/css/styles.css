@@ -25,3 +25,8 @@ ul {
   align-items: flex-start;
   gap: 24px;
 }
+.feedback-form {
+  display:flex;
+  flex-direction: column;
+  width: 360px;
+}
