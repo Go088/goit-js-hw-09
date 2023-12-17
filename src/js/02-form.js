@@ -10,8 +10,8 @@ try {
         if (storageValue) {
             element.value = storageValue;
         }
-     });
-
+    });
+    
 } catch (error){
     console.log("PARSE LOCAL STORAGE ERROR");
 }
@@ -29,21 +29,17 @@ form.addEventListener("input", () => {
  
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const { email, message } = event.currentTarget.elements;
-    email = email.value.trim();
-    message = message.value.trim();
+    const { email, message } = event.target.elements;
     
-    if (!email || !message) { return };
+    if (!email.value || !message.value) { return };
 
-    const result = {
-        email,
-        message
+    const userData = {
+        email: email.value,
+        message: message.value
     };
-
-    console.log(result);
-
+    console.log(userData);
+    
     localStorage.removeItem(storageKey);
     form.reset();
-
 });
  
